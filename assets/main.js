@@ -161,15 +161,20 @@
     if (!el || typeof PROFILE === "undefined") return;
     const words = PROFILE.roles;
     if (prefersReduced) { el.textContent = words[0]; return; }
+    // ---- Speed dials (milliseconds) — tweak these to taste ----
+    const TYPE_SPEED = 110;     // time per letter while typing  (higher = slower)
+    const DELETE_SPEED = 70;   // time per letter while deleting (higher = slower)
+    const HOLD_FULL = 1500;    // pause once a word is fully typed, before deleting
+
     let wi = 0, ci = 0, deleting = false;
     function tick() {
       const w = words[wi];
       el.textContent = w.slice(0, ci);
       if (!deleting && ci < w.length) ci++;
       else if (deleting && ci > 0) ci--;
-      else if (!deleting && ci === w.length) { deleting = true; return setTimeout(tick, 1500); }
+      else if (!deleting && ci === w.length) { deleting = true; return setTimeout(tick, HOLD_FULL); }
       else { deleting = false; wi = (wi + 1) % words.length; }
-      setTimeout(tick, deleting ? 45 : 95);
+      setTimeout(tick, deleting ? DELETE_SPEED : TYPE_SPEED);
     }
     tick();
   }
