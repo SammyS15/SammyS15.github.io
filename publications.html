@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications — Sammy Sharief</title>
+  <meta name="description" content="Publications by Sammy Sharief — astronomy, machine learning, and statistics. Filter by topic or search by title and author." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Sammy Sharief</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="icon-btn theme-toggle" aria-label="Toggle light / dark theme"></button>
+        <button class="icon-btn hamburger" aria-label="Open menu"></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="section-pad" style="padding-bottom:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Research output</span>
+        <h2>Publications</h2>
+        <p>Peer-reviewed papers and preprints across astrophysics, machine learning, and statistics. Filter by topic or search by title and author.</p>
+
+        <!-- For the canonical list, see <a class="gradient-text" href="https://arxiv.org" target="_blank" rel="noopener">arXiv</a> / Google&nbsp;Scholar. -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section class="section-pad" style="padding-top:36px">
+    <div class="container">
+      <div class="pub-toolbar reveal">
+        <div class="filter-chips" id="topic-chips"></div>
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="search" id="pub-search" placeholder="Search papers…" aria-label="Search publications" />
+        </label>
+      </div>
+
+      <div class="pub-list" id="all-pubs"></div>
+      <div class="empty-state" id="pub-empty" style="display:none">No publications match your filters.</div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand" href="index.html">Sammy Sharief</a>
+        <p style="margin-top:10px">© <span data-year-now></span> Sammy Sharief · Astronomy, AI &amp; Statistics.</p>
+      </div>
+      <div class="socials" data-socials></div>
+    </div>
+  </footer>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>
