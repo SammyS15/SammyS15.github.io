@@ -16,7 +16,7 @@ const PROFILE = {
   location: "Paris, France",
   // Social / academic links — replace any "#" with your real URL
   links: {
-    email: "mailto:sammysharief@outlook.com",
+    email: "mailto:sammy.sharief@universite-paris-saclay.fr",
     scholar: "#",            // TODO: Google Scholar profile URL
     arxiv: "#",              // TODO: arXiv author page URL
     github: "https://github.com/SammyS15",
