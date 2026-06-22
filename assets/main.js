@@ -317,7 +317,6 @@
     if (p.links?.arxiv) links.push(`<a class="pub-link" href="${p.links.arxiv}" target="_blank" rel="noopener">${ICONS.arxiv} arXiv</a>`);
     if (p.links?.pdf) links.push(`<a class="pub-link" href="${p.links.pdf}" target="_blank" rel="noopener">${ICONS.pdf} PDF</a>`);
     if (p.links?.code) links.push(`<a class="pub-link" href="${p.links.code}" target="_blank" rel="noopener">${ICONS.code} Code</a>`);
-    if (p.abstract) links.push(`<button class="pub-link" data-abstract>${ICONS.abstract} Abstract</button>`);
 
     return `
     <article class="pub-card reveal${p.spotlight ? " spotlight" : ""}" data-tags="${(p.tags || []).join("|")}" data-year="${p.year}" data-text="${(p.title + " " + p.authors).toLowerCase().replace(/"/g, "")}">
@@ -335,7 +334,6 @@
         <h3>${p.links?.arxiv ? `<a href="${p.links.arxiv}" target="_blank" rel="noopener">${p.title}</a>` : p.title}</h3>
         <p class="pub-authors">${boldName(p.authors)}</p>
         <div class="pub-links">${links.join("")}</div>
-        <div class="pub-abstract"><div><p>${p.abstract || ""}</p></div></div>
       </div>
     </article>`;
   }
@@ -401,17 +399,6 @@
     }
   }
 
-  /* ---------- Abstract toggle (delegated) ---------- */
-  function abstractToggle() {
-    document.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-abstract]");
-      if (!btn) return;
-      const card = btn.closest(".pub-card");
-      const ab = card && $(".pub-abstract", card);
-      if (ab) ab.classList.toggle("open");
-    });
-  }
-
   /* ---------- Render interests & news ---------- */
   function renderInterests() {
     const host = $("#interests");
@@ -463,7 +450,6 @@
     renderAllPubs();
     typedRoles();
     starfield();
-    abstractToggle();
     scrollReveal();
   });
 })();
