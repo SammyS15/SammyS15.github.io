@@ -1,161 +1,117 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sammy Sharief — Astrophysics · Machine Learning · Statistics</title>
   <meta name="description" content="Sammy Sharief — researcher at the intersection of astronomy, machine learning, and statistics. Strong gravitational lensing, high-dimensional inverse problems, and generative model evaluation." />
   <meta name="author" content="Sammy Sharief" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Sammy Sharief — Astrophysics · ML · Statistics" />
-  <meta property="og:description" content="Researcher building statistical & machine-learning methods to understand the Universe." />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ============ NAV ============ -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html">Sammy Sharief</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="cv.html">CV</a></li>
-      </ul>
-      <div class="nav-right">
-        <button class="icon-btn theme-toggle" aria-label="Toggle light / dark theme"></button>
-        <button class="icon-btn hamburger" aria-label="Open menu"></button>
-      </div>
+  <canvas id="starfield"></canvas>
+
+  <header class="bar">
+    <div class="wrap bar-inner">
+      <a class="callsign" href="index.html"><span class="blip"></span>Sammy Sharief</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+      </nav>
+      <button class="burger" aria-label="Menu">≡</button>
     </div>
   </header>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <canvas id="starfield"></canvas>
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <span class="hero-eyebrow"><span class="dot"></span> Astronomy · AI · Statistics</span>
-        <h1>Hi, I'm <span class="gradient-text">Sammy Sharief</span></h1>
-        <div class="typed-wrap">Working at the intersection of <span class="typed" data-typed></span><span class="caret"></span></div>
-        <p class="lead">I build statistical &amp; machine-learning methods to make sense of the Universe.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="publications.html">View Publications →</a>
-          <a class="btn" href="cv.html">Read my CV</a>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <span class="label kick rise">Astronomy · AI · Statistics</span>
+          <h1 class="rise">Hi, I'm <em>Sammy Sharief</em></h1>
+          <p class="specline rise">Working at the intersection of astronomy, machine learning, and statistics.</p>
+          <p class="tag rise">I build statistical &amp; machine-learning methods to make sense of the Universe.</p>
+          <div class="hero-cta rise">
+            <a class="btn btn-solid" href="publications.html">View Publications →</a>
+            <a class="btn btn-ghost" href="cv.html">Read my CV</a>
+          </div>
+          <div class="socials rise" data-socials></div>
         </div>
+        <div class="scope rise">
+          <div class="ring"><div class="ring-inner"><img src="assets/profile.jpeg" alt="Sammy Sharief" /></div></div>
+          <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap">
+        <div class="shead reveal"><span class="sig">About</span><h2>Decoding the cosmos with data.</h2><span class="flex"></span></div>
+        <div class="about">
+          <div class="reveal">
+            <p>I'm a PhD candidate in physics at Université Paris-Saclay (with François Lanusse, Tobias Liaudat &amp; Samuel Farrens), working where <em>astrophysics</em>, <em>machine learning</em>, and <em>statistics</em> meet. My research centers on uncertainty quantification, assessing the quality of generative models and assessing calibration. Additionally, I am also interested in developing new methods to solve high-dimensional inverse problems.</p>
+          </div>
+          <aside class="panel reveal">
+            <div class="row"><span class="k">Location</span><span class="v" data-profile="location">Paris, France</span></div>
+            <div class="row"><span class="k">Affiliation</span><span class="v" data-profile="affiliation">Université Paris-Saclay</span></div>
+            <div class="row"><span class="k">Fellowship</span><span class="v hot">MSCA COFUND · DeMythif.AI</span></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH INTERESTS -->
+    <section id="research">
+      <div class="wrap">
+        <div class="shead reveal"><h2>Research Interests</h2><span class="flex"></span></div>
+        <p class="reveal" style="color:var(--ink-2);margin:-22px 0 32px">A few of the problems I find most exciting right now.</p>
+        <ol class="index" id="index"></ol>
+      </div>
+    </section>
+
+    <!-- SELECTED PUBLICATIONS -->
+    <section id="writings">
+      <div class="wrap">
+        <div class="shead reveal"><h2>Featured publications</h2><span class="flex"></span></div>
+        <p class="reveal" style="color:var(--ink-2);margin:-22px 0 30px">A snapshot of recent papers. See the full list on the publications page.</p>
+        <div class="log" id="selected"></div>
+        <p style="margin-top:28px" class="reveal"><a class="btn btn-ghost" href="publications.html">All publications →</a></p>
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news">
+      <div class="wrap">
+        <div class="shead reveal"><h2>Recent news</h2><span class="flex"></span></div>
+        <div class="tx" id="transmissions"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="wrap reveal">
+        <h2>Let's talk <em>science</em>.</h2>
+        <p>Interested in collaborating on lensing, inverse problems, or generative-model evaluation? I'm always happy to chat.</p>
+        <div class="hero-cta" style="justify-content:center">
+          <a class="btn btn-solid" href="mailto:sammy.sharief@universite-paris-saclay.fr">Get in touch</a>
+          <a class="btn btn-ghost" href="publications.html">See my research</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div style="height:1px;background:var(--line)"></div>
+      <div class="foot-inner">
+        <p>© <span data-year-now></span> Sammy Sharief · Astronomy, AI &amp; Statistics.</p>
         <div class="socials" data-socials></div>
       </div>
-      <div class="hero-portrait">
-        <div class="avatar-ring">
-          <div class="avatar-inner">
-            <img src="assets/profile.jpeg" alt="Sammy Sharief" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-cue">Scroll<span>↓</span></div>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section class="section-pad" id="about">
-    <div class="container about-grid">
-      <div class="reveal">
-        <span class="eyebrow">About</span>
-        <h2>Decoding the cosmos with data.</h2>
-        <p>I'm a <strong>PhD candidate in physics</strong> at <strong>Université Paris-Saclay</strong> (with François Lanusse, Tobias Liaudat &amp; Samuel Farrens), working where <strong>astrophysics</strong>, <strong>machine learning</strong>, and <strong>statistics</strong> meet. My research centers on uncertanity quantification, assessing the quality of genrative models and assessing calibration. Additionally, I am also interrested in developing new methods to solve high dimensional inverse problems.</p> <!-- such as <strong>strong gravitational lensing</strong>, recovering the structure of the Universe from noisy, incomplete observations.</p> -->
-        <!-- <p>Alongside that, I design principled tools for <strong>evaluating generative models</strong>, scoring conditional distributions, and <strong>quantifying uncertainty</strong> (PQMass, MIRA, Pokie). Earlier work spans Type Ia supernovae, the Hubble tension, and field-level analyses of cosmological simulations.</p> -->
-      </div>
-      <aside class="fact-card reveal d2">
-        <h4>At a glance</h4>
-        <div class="fact-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          <span data-profile="location">Montréal, Canada</span>
-        </div>
-        <div class="fact-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>
-          <span data-profile="affiliation">M.Sc. — Université de Montréal · Mila</span>
-        </div>
-        <div class="fact-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m9 14.5-1.5 7L12 19l4.5 2.5L15 14.5"/></svg>
-          <span>MSCA COFUND Doctoral Fellow · DeMythif.AI</span>
-        </div>
-        <!-- <div class="fact-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>
-          <span>8 publications · ICML 2026 Spotlight · ICLR 2025</span>
-        </div> -->
-      </aside>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ============ RESEARCH INTERESTS ============ -->
-  <section class="section-pad">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Research</span>
-        <h2>What I think about</h2>
-        <p>A few of the problems I find most exciting right now.</p>
-      </div>
-      <div class="interest-grid" id="interests"></div>
-    </div>
-  </section>
-
-  <!-- ============ SELECTED PUBLICATIONS ============ -->
-  <section class="section-pad">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Selected work</span>
-        <h2>Featured publications</h2>
-        <p>A snapshot of recent papers. See the full, filterable list on the publications page.</p>
-      </div>
-      <div class="pub-list" id="selected-pubs"></div>
-      <div style="margin-top:28px" class="reveal">
-        <a class="btn btn-primary" href="publications.html">All publications →</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ============ NEWS ============ -->
-  <section class="section-pad">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Updates</span>
-        <h2>Recent news</h2>
-      </div>
-      <div class="news-list reveal" id="news"></div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT CTA ============ -->
-  <section class="section-pad">
-    <div class="container">
-      <div class="cta-band reveal">
-        <h2>Let's talk science.</h2>
-        <p>Interested in collaborating on lensing, inverse problems, or generative-model evaluation? I'm always happy to chat.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="mailto:sammy.sharief@universite-paris-saclay.fr">Get in touch</a>
-          <a class="btn" href="publications.html">See my research</a>
-        </div>
-        <div class="socials" data-socials style="justify-content:center;margin-top:22px"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <a class="brand" href="index.html">Sammy Sharief</a>
-        <p style="margin-top:10px">© <span data-year-now></span> Sammy Sharief · Astronomy, AI &amp; Statistics.</p>
-      </div>
-      <div class="socials" data-socials></div>
     </div>
   </footer>
 

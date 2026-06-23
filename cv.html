@@ -1,224 +1,104 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV — Sammy Sharief</title>
   <meta name="description" content="Curriculum vitae of Sammy Sharief — PhD in Physics at Université Paris-Saclay. Education, research experience, talks, and skills across astronomy, machine learning, and statistics." />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ============ NAV ============ -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html">Sammy Sharief</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="cv.html">CV</a></li>
-      </ul>
-      <div class="nav-right">
-        <button class="icon-btn theme-toggle" aria-label="Toggle light / dark theme"></button>
-        <button class="icon-btn hamburger" aria-label="Open menu"></button>
-      </div>
+  <canvas id="starfield"></canvas>
+  <header class="bar">
+    <div class="wrap bar-inner">
+      <a class="callsign" href="index.html"><span class="blip"></span>Sammy Sharief</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+      </nav>
+      <button class="burger" aria-label="Menu">≡</button>
     </div>
   </header>
 
-  <!-- ============ PAGE HEADER ============ -->
-  <section class="section-pad" style="padding-bottom:30px">
-    <div class="container">
-      <div class="section-head reveal" style="margin-bottom:0">
-        <span class="eyebrow">Curriculum Vitae</span>
-        <h2>The journey so far</h2>
-        <p>PhD candidate in physics at Université Paris-Saclay, working at the intersection of astronomy, machine learning, and statistics.</p>
-        <div class="hero-cta" style="margin-top:22px">
-          <a class="btn btn-primary" href="assets/cv.pdf" target="_blank" rel="noopener">Download PDF CV</a>
-          <a class="btn" href="mailto:sammy.sharief@universite-paris-saclay.fr">Email me</a>
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="shead reveal"><span class="sig">Curriculum Vitae</span><h2>The journey so far</h2><span class="flex"></span></div>
+        <p class="reveal" style="color:var(--ink-2);max-width:56ch;margin-bottom:24px">PhD candidate in physics at Université Paris-Saclay, working at the intersection of astronomy, machine learning, and statistics.</p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-solid" href="assets/cv.pdf" target="_blank" rel="noopener">Download PDF CV</a>
+          <a class="btn btn-ghost" href="mailto:sammy.sharief@universite-paris-saclay.fr">Email me</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ CV BODY ============ -->
-  <section class="section-pad" style="padding-top:30px">
-    <div class="container cv-grid">
-
-      <!-- Education -->
-      <div>
-        <div class="section-head reveal"><span class="eyebrow">Education</span><h2>Where I've studied</h2></div>
-        <div class="timeline">
-          <div class="tl-item reveal">
-            <div class="tl-date">Dec 2025 — Present</div>
-            <h3>PhD in Physics</h3>
-            <div class="tl-org">Université Paris-Saclay · Paris, France</div>
-            <p>Machine learning for cosmology and high-dimensional inverse problems. Advisors: François Lanusse, Tobias Liaudat &amp; Samuel Farrens.</p>
-          </div>
-          <div class="tl-item reveal">
-            <div class="tl-date">Sept 2023 — Sept 2025</div>
-            <h3>M.Sc. in Computer Science</h3>
-            <div class="tl-org">University of Montréal · Montréal, QC</div>
-            <p>Generative-model evaluation and uncertainty quantification. Advisor: Laurence Perreault-Levasseur.</p>
-          </div>
-          <div class="tl-item reveal">
-            <div class="tl-date">Aug 2019 — May 2023</div>
-            <h3>B.Sc. in Computer Science + Astronomy</h3>
-            <div class="tl-org">University of Illinois at Urbana-Champaign · Minor in Informatics</div>
-            <p>Liberal Arts &amp; Sciences. Advisor: Gautham Narayan.</p>
-          </div>
+    <!-- Education -->
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="shead reveal"><span class="sig">Education</span><h2>Where I've studied</h2><span class="flex"></span></div>
+        <div class="cvlog">
+          <div class="cv-row reveal"><div class="when">Dec 2025 — Present</div><div><h3>PhD in Physics</h3><div class="org">Université Paris-Saclay · Paris, France</div><p>Machine learning for cosmology and high-dimensional inverse problems. Advisors: François Lanusse, Tobias Liaudat &amp; Samuel Farrens.</p></div></div>
+          <div class="cv-row reveal"><div class="when">Sept 2023 — Sept 2025</div><div><h3>M.Sc. in Computer Science</h3><div class="org">University of Montréal · Montréal, QC</div><p>Generative-model evaluation and uncertainty quantification. Advisor: Laurence Perreault-Levasseur.</p></div></div>
+          <div class="cv-row reveal"><div class="when">Aug 2019 — May 2023</div><div><h3>B.Sc. in Computer Science + Astronomy</h3><div class="org">University of Illinois at Urbana-Champaign · Minor in Informatics</div><p>Liberal Arts &amp; Sciences. Advisor: Gautham Narayan.</p></div></div>
         </div>
       </div>
+    </section>
 
-      <!-- Awards & Fellowships -->
-      <div>
-        <div class="section-head reveal"><span class="eyebrow">Honours</span><h2>Awards &amp; fellowships</h2></div>
-        <div class="timeline">
-          <div class="tl-item reveal">
-            <div class="tl-date">2025</div>
-            <h3>MSCA COFUND Doctoral Fellow</h3>
-            <div class="tl-org">DeMythif.AI · Université Paris-Saclay</div>
-            <p>Selected for the COFUND DeMythif.AI doctoral programme of excellence, cofunded by the European Union's Marie Skłodowska-Curie Actions (MSCA).</p>
-          </div>
+    <!-- Awards & Fellowships -->
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="shead reveal"><span class="sig">Honours</span><h2>Awards &amp; fellowships</h2><span class="flex"></span></div>
+        <div class="cvlog">
+          <div class="cv-row reveal"><div class="when">2025</div><div><h3>MSCA COFUND Doctoral Fellow</h3><div class="org">DeMythif.AI · Université Paris-Saclay</div><p>Selected for the COFUND DeMythif.AI doctoral programme of excellence, cofunded by the European Union's Marie Skłodowska-Curie Actions (MSCA).</p></div></div>
         </div>
       </div>
+    </section>
 
-      <!-- Experience -->
-      <div>
-        <div class="section-head reveal"><span class="eyebrow">Experience</span><h2>Research &amp; projects</h2></div>
-        <div class="timeline">
-          <div class="tl-item reveal">
-            <div class="tl-date">Oct 2024 — Apr 2026 · Paris, France</div>
-            <h3>MIRA — PhD Project</h3>
-            <div class="tl-org">ICML 2026 Main Conference Spotlight</div>
-            <!-- <p>Spearheaded MIRA, a novel metric for conditional-distribution accuracy and model comparison. Validated it across modalities and high-dimensional settings, and led collaboration, paper drafts, and a well-documented repository.</p> -->
-          </div>
-          <div class="tl-item reveal">
-            <div class="tl-date">Feb 2024 — Jan 2025 · Montréal, QC</div>
-            <h3>PQMass — Master's Project</h3>
-            <div class="tl-org">Accepted to ICLR 2025</div>
-            <!-- <p>Co-developed PQMass, a statistical framework that quantifies generative-model performance and tests whether two distributions match — exposing failure modes of metrics like FID and FLD, and scaling to millions of dimensions.</p> -->
-          </div>
-          <div class="tl-item reveal">
-            <div class="tl-date">May 2023 — Aug 2023 · Champaign, IL</div>
-            <h3>DECam Data Reduction — Research Assistant</h3>
-            <div class="tl-org">Young Supernova Experiment</div>
-            <!-- <p>Ran Dark Energy Camera (DECam) data reduction for YSE and external users, improved pipeline efficiency, built supernova target templates, and authored detailed pipeline documentation.</p> -->
-          </div>
-          <div class="tl-item reveal">
-            <div class="tl-date">Jun 2022 — Aug 2022 · Austin, TX</div>
-            <h3>Learning SESNA with ML — NSF REU Intern</h3>
-            <div class="tl-org">Poster at AAS 241</div>
-            <!-- <p>Recovered missing data across 9M SESNA sources with multiple imputation, balanced classes via upsampling, and classified 2.2M of 4.5M unlabeled sources with a probabilistic MLP.</p> -->
-          </div>
-          <div class="tl-item reveal">
-            <div class="tl-date">Jun 2021 — Aug 2021 · Rochester, NY</div>
-            <h3>Light Deflection near Kerr–Newman Black Holes — NSF REU Intern</h3>
-            <div class="tl-org">Poster at AAS 241</div>
-            <!-- <p>Investigated equatorial-plane photon trajectories near Kerr–Newman black holes and derived approximate forms for photon orbits as a function of mass, spin, and charge.</p> -->
-          </div>
-          <div class="tl-item reveal">
-            <div class="tl-date">Jan 2021 — Apr 2023 · Champaign, IL</div>
-            <h3>YSE DR1 — Research Student</h3>
-            <div class="tl-org">Accepted to ApJ</div>
-            <!-- <p>Built a pipeline ingesting Zwicky Transient Facility data merged with YSE, and validated simulated supernovae via Bazin-fit features, PCA, and KD-Tree similarity matching.</p> -->
-          </div>
+    <!-- Experience -->
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="shead reveal"><span class="sig">Experience</span><h2>Research &amp; projects</h2><span class="flex"></span></div>
+        <div class="cvlog">
+          <div class="cv-row reveal"><div class="when">Oct 2024 — Apr 2026 · Paris, France</div><div><h3>MIRA — PhD Project</h3><div class="org">ICML 2026 Main Conference Spotlight</div></div></div>
+          <div class="cv-row reveal"><div class="when">Feb 2024 — Jan 2025 · Montréal, QC</div><div><h3>PQMass — Master's Project</h3><div class="org">Accepted to ICLR 2025</div></div></div>
+          <div class="cv-row reveal"><div class="when">May 2023 — Aug 2023 · Champaign, IL</div><div><h3>DECam Data Reduction — Research Assistant</h3><div class="org">Young Supernova Experiment</div></div></div>
+          <div class="cv-row reveal"><div class="when">Jun 2022 — Aug 2022 · Austin, TX</div><div><h3>Learning SESNA with ML — NSF REU Intern</h3><div class="org">Poster at AAS 241</div></div></div>
+          <div class="cv-row reveal"><div class="when">Jun 2021 — Aug 2021 · Rochester, NY</div><div><h3>Light Deflection near Kerr–Newman Black Holes — NSF REU Intern</h3><div class="org">Poster at AAS 241</div></div></div>
+          <div class="cv-row reveal"><div class="when">Jan 2021 — Apr 2023 · Champaign, IL</div><div><h3>YSE DR1 — Research Student</h3><div class="org">Accepted to ApJ</div></div></div>
         </div>
       </div>
+    </section>
 
-      <!-- Talks & Posters -->
-      <div>
-        <div class="section-head reveal"><h2>Selected talks &amp; posters</h2></div>
-        <div class="news-list reveal">
-          <div class="news-item">
-            <span class="news-date">July 2026</span>
-            <p><strong>MIRA: A Score for Conditional Distribution and Model Comparsion</strong> — Poster, ICML 2026, Seoul, South Korea.</p>
-          </div>
-          <div class="news-item">
-            <span class="news-date">June 2026</span>
-            <p><strong>Assessing Posterior Accuracy in Latent Space Solvers for High-Dimensional Inverse Problems</strong> — Poster, Grenoble AI for Physical Sciences workshop, Grenoble, France.</p>
-          </div>
-          <div class="news-item">
-            <span class="news-date">Feb 2026</span>
-            <p><strong>Uncertainty Quantification for Generative Models in Astrophysics</strong> — Talk, NSF-funded SkAI Institute, Chicago, USA.</p>
-          </div>
-          <div class="news-item">
-            <span class="news-date">August 2025</span>
-            <p><strong>Pokie: Posterior Accuracy and Model Comparison</strong> — Poster, ML4Astro ICML 2025 Workshop, Vancouver, Canada.</p>
-          </div>
-          <div class="news-item">
-            <span class="news-date">Apr 2025</span>
-            <p><strong>PQMass: Probabilistic Assessment of the Quality of Generative Models</strong> — Poster, ICLR 2025, Singapore.</p>
-          </div>
-          <div class="news-item">
-            <span class="news-date">May 2024</span>
-            <p><strong>PQMass and its Applicability to Astrophysics</strong> — Talk, Centre de recherche en astrophysique du Québec (CRAQ), Canada.</p>
-          </div>
-          <div class="news-item">
-            <span class="news-date">May 2023</span>
-            <p><strong>Learning SESNA with Machine Learning</strong> — Poster, Astronomy Festival (AstroFest 2023), Illinois, USA.</p>
-          </div>
-          <div class="news-item">
-            <span class="news-date">Jan 2023</span>
-            <p><strong>Learning SESNA with Machine Learning</strong> — Poster, Astronomy Association Society, Seattle, USA.</p>
-          </div>
-          <div class="news-item">
-            <span class="news-date">Jan 2023</span>
-            <p><strong>Light Deflection near Kerr-Newman black hole spacetime</strong> — Poster, Astronomy Association Society, Seattle, USA.</p>
-          </div>
+    <!-- Talks & Posters -->
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="shead reveal"><h2>Selected talks &amp; posters</h2><span class="flex"></span></div>
+        <div class="cvlog">
+          <div class="cv-row reveal"><div class="when">July 2026 · Seoul, South Korea</div><div><h3>MIRA: A Score for Conditional Distribution and Model Comparison</h3><div class="org">Poster · ICML 2026</div></div></div>
+          <div class="cv-row reveal"><div class="when">June 2026 · Grenoble, France</div><div><h3>Assessing Posterior Accuracy in Latent Space Solvers for High-Dimensional Inverse Problems</h3><div class="org">Poster · Grenoble AI for Physical Sciences workshop</div></div></div>
+          <div class="cv-row reveal"><div class="when">Feb 2026 · Chicago, USA</div><div><h3>Uncertainty Quantification for Generative Models in Astrophysics</h3><div class="org">Talk · NSF-funded SkAI Institute</div></div></div>
+          <div class="cv-row reveal"><div class="when">August 2025 · Vancouver, Canada</div><div><h3>Pokie: Posterior Accuracy and Model Comparison</h3><div class="org">Poster · ML4Astro ICML 2025 Workshop</div></div></div>
+          <div class="cv-row reveal"><div class="when">Apr 2025 · Singapore</div><div><h3>PQMass: Probabilistic Assessment of the Quality of Generative Models</h3><div class="org">Poster · ICLR 2025</div></div></div>
+          <div class="cv-row reveal"><div class="when">May 2024 · Canada</div><div><h3>PQMass and its Applicability to Astrophysics</h3><div class="org">Talk · Centre de recherche en astrophysique du Québec (CRAQ)</div></div></div>
+          <div class="cv-row reveal"><div class="when">May 2023 · Illinois, USA</div><div><h3>Learning SESNA with Machine Learning</h3><div class="org">Poster · Astronomy Festival (AstroFest 2023)</div></div></div>
+          <div class="cv-row reveal"><div class="when">Jan 2023 · Seattle, USA</div><div><h3>Learning SESNA with Machine Learning</h3><div class="org">Poster · Astronomy Association Society</div></div></div>
+          <div class="cv-row reveal"><div class="when">Jan 2023 · Seattle, USA</div><div><h3>Light Deflection near Kerr-Newman black hole spacetime</h3><div class="org">Poster · Astronomy Association Society</div></div></div>
         </div>
       </div>
+    </section>
+  </main>
 
-      <!-- Skills
-      <div>
-        <div class="section-head reveal"><h2>Skills &amp; methods</h2></div>
-        <div class="skill-groups">
-          <div class="skill-card reveal d1">
-            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9-3 3 3 3M16 9l3 3-3 3M13 6l-2 12"/></svg> Languages &amp; Libraries</h4>
-            <div class="tag-row">
-              <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">JAX</span>
-              <span class="tag">NumPy / SciPy</span><span class="tag">scikit-learn</span><span class="tag">LaTeX</span>
-            </div>
-          </div>
-          <div class="skill-card reveal d2">
-            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 16l3.5-4 3 2.5L20 8"/></svg> ML &amp; Statistics</h4>
-            <div class="tag-row">
-              <span class="tag">Simulation-based inference</span><span class="tag">Generative models</span>
-              <span class="tag">Diffusion models</span><span class="tag">Bayesian inference</span>
-              <span class="tag">Uncertainty quantification</span><span class="tag">Inverse problems</span>
-            </div>
-          </div>
-          <div class="skill-card reveal d3">
-            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 12 6-2 1.5 4-6 2zM9 10l9-4 2 4-9 4M11 14v6m-2 0h4"/></svg> Astrophysics</h4>
-            <div class="tag-row">
-              <span class="tag">Strong &amp; weak lensing</span><span class="tag">Transient photometry</span>
-              <span class="tag">Cosmological simulations</span><span class="tag">Supernova cosmology</span>
-              <span class="tag">DECam / ZTF pipelines</span>
-            </div>
-          </div>
-          <div class="skill-card reveal d4">
-            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> Tools &amp; Infra</h4>
-            <div class="tag-row">
-              <span class="tag">Git</span><span class="tag">Linux</span><span class="tag">HPC / SLURM</span>
-              <span class="tag">Weights &amp; Biases</span><span class="tag">Matplotlib</span>
-            </div>
-          </div>
-        </div>
+  <footer class="foot">
+    <div class="wrap">
+      <div style="height:1px;background:var(--line)"></div>
+      <div class="foot-inner">
+        <p>© <span data-year-now></span> Sammy Sharief · Astronomy, AI &amp; Statistics.</p>
+        <div class="socials" data-socials></div>
       </div>
-
-    </div>
-  </section> -->
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <a class="brand" href="index.html">Sammy Sharief</a>
-        <p style="margin-top:10px">© <span data-year-now></span> Sammy Sharief · Astronomy, AI &amp; Statistics.</p>
-      </div>
-      <div class="socials" data-socials></div>
     </div>
   </footer>
 
