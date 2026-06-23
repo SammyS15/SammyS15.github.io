@@ -194,8 +194,27 @@
     else { draw(); setInterval(spawnShooting, 4000); }
   }
 
+  /* ---------- Typed roles (hero) ---------- */
+  function typedRoles() {
+    const el = $("[data-typed]");
+    if (!el || typeof PROFILE === "undefined" || !PROFILE.roles) return;
+    const words = PROFILE.roles;
+    if (prefersReduced) { el.textContent = words[0]; return; }
+    const TYPE_SPEED = 95, DELETE_SPEED = 45, HOLD_FULL = 1500;
+    let wi = 0, ci = 0, deleting = false;
+    (function tick() {
+      const w = words[wi];
+      el.textContent = w.slice(0, ci);
+      if (!deleting && ci < w.length) ci++;
+      else if (deleting && ci > 0) ci--;
+      else if (!deleting && ci === w.length) { deleting = true; return setTimeout(tick, HOLD_FULL); }
+      else { deleting = false; wi = (wi + 1) % words.length; }
+      setTimeout(tick, deleting ? DELETE_SPEED : TYPE_SPEED);
+    })();
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
-    render(); chrome(); starfield(); reveals();
+    render(); chrome(); starfield(); reveals(); typedRoles();
     requestAnimationFrame(() => document.body.classList.add("loaded"));
   });
 })();

@@ -105,6 +105,9 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; margin: 0; line-
 .hero h1 em { font-style: normal; color: var(--accent); }
 .specline { font-family: var(--mono); font-size: 0.82rem; letter-spacing: 0.04em; color: var(--ink-2); margin: 20px 0 0; }
 .specline b { color: var(--ink); font-weight: 400; }
+.specline .typed { color: var(--accent); font-weight: 700; }
+.specline .caret { display: inline-block; width: 0.5em; height: 1.05em; background: var(--accent); margin-left: 3px; vertical-align: text-bottom; animation: caret 1.05s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
 .hero .tag { font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--ink-2); max-width: 34ch; margin: 22px 0 32px; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
 .socials { display: flex; flex-wrap: wrap; gap: 8px 20px; }
