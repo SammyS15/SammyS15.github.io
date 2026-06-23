@@ -103,7 +103,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; margin: 0; line-
 .hero .kick { display: inline-block; margin-bottom: 26px; }
 .hero h1 { font-size: clamp(3rem, 8.5vw, 6.4rem); font-weight: 800; letter-spacing: -0.03em; }
 .hero h1 em { font-style: normal; color: var(--accent); }
-.specline { font-family: var(--mono); font-size: 0.82rem; letter-spacing: 0.04em; color: var(--ink-2); margin: 20px 0 0; }
+.specline { font-family: var(--mono); font-size: 1.3rem; letter-spacing: 0.04em; color: var(--ink-2); margin: 20px 0 0; }
 .specline b { color: var(--ink); font-weight: 400; }
 .specline .typed { color: var(--accent); font-weight: 700; }
 .specline .caret { display: inline-block; width: 0.5em; height: 1.05em; background: var(--accent); margin-left: 3px; vertical-align: text-bottom; animation: caret 1.05s steps(1) infinite; }
