@@ -31,8 +31,8 @@
   --accent-rgb: 141, 163, 90; */
 
   /* ===== ACCENT — olive green (change these 4 to recolor everything) ===== */
-  --accent: #8da35a;          /* olive green — the single sharp accent */
-  --accent-deep: #74894a;     /* darker olive for button hovers       */
+  --accent: #97c621;          /* olive green — the single sharp accent */
+  --accent-deep: #789937;     /* darker olive for button hovers       */
   --accent-ink: #0e1207;      /* dark text that sits on the accent    */
   --accent-rgb: 141, 163, 90; /* same olive as R,G,B (for glows)      */
   /* Alternatives — Emerald #2ecc71 / 46,204,113 · Blue #4aa3ff / 74,163,255 */

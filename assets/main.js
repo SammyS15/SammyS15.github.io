@@ -151,11 +151,11 @@
       w = canvas.clientWidth; h = canvas.clientHeight;
       canvas.width = w * dpr; canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.min(230, Math.floor((w * h) / 6800));
+      const count = Math.min(800, Math.floor((w * h) / 2000));
       stars = Array.from({ length: count }, () => ({
         x: Math.random() * w, y: Math.random() * h,
         z: Math.random() * 0.8 + 0.2, r: Math.random() * 1.3 + 0.2,
-        tw: Math.random() * Math.PI * 2, ts: Math.random() * 0.04 + 0.01,
+        tw: Math.random() * Math.PI * 2, ts: Math.random() * 0.004 + 0.001,
       }));
     }
     function spawnShooting() {
